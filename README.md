@@ -6,7 +6,7 @@ Small linked list library.
 make dllist_test rule to test all functions of the library.  
 
 ### functions:  
-double linked list:
+double linked list:  
     - dll_new_node; 
         allocates memory for a new node of the list, initializes all elements, setting value to input value and prev/next to NULL;  
         returns the allocated memory, or NULL if allocation fails;  
