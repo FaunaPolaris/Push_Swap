@@ -3,7 +3,7 @@
 ## llist.h
 
 Small linked list library.  
-make llist_test rule to test all functions of the library.  
+make dllist_test rule to test all functions of the library.  
 
 ### functions:  
 double linked list:
@@ -69,4 +69,4 @@ double linked list:
         if content_type is any other char an error message will be displayed, if the list is empty, nothing will be displayed.  
 
     added: 0.0.0 (04/10/23);  
-    last updated: 0.0.0 (04/10/23);  
+    last updated: 0.0.1 (04/10/23);  
