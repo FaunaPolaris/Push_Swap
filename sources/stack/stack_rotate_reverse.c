@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_reverse.c                                   :+:      :+:    :+:   */
+/*   stack_rotate_reverse.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:37:31 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/05 16:48:01 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/06 18:52:36 by nprudenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stacks.h>
 
-int	reverse_rotate(t_stack *stack)
+int	stack_rotate_reverse(t_stack *stack)
 {
 	if (!stack->back)
 	{
@@ -32,7 +32,7 @@ int	reverse_rotate(t_stack *stack)
 			stack->back = stack->back->next;
 			stack->back->next = NULL;
 		}
-		return (1);		
+		return (1);
 	}
 	return (0);
 }
