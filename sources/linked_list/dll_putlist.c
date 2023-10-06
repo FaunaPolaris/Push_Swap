@@ -29,6 +29,7 @@ void	dll_putlist(t_dllist *head, char value_type, int fd)
 	else
 		fp_printf("Error: unrecognizable value type of :'%c'\n",
 				value_type);
+	write(1, "\n", 1);
 }
 
 static void	st_print_as_char(t_dllist *head, int fd)

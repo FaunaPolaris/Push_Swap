@@ -22,10 +22,15 @@ typedef struct s_stack
 	t_dllist	*back;
 }	t_stack;
 
+// stack allocation and dealocation
+
+t_stack	*stck_new(void **values, char id);
+void	stck_rmv(t_stack *stack);
+
 // single stack movements
 
 int	stck_swap(t_stack *stack);
-int	stck_push(t_stack *donor, t_stack *receive);
+int	stck_push(t_stack *donor, t_stack *receiver);
 int	stck_rott_lft(t_stack *stack);
 int	stck_rott_rgt(t_stack *stack);
 
@@ -34,5 +39,9 @@ int	stck_rott_rgt(t_stack *stack);
 int	stck_swap_double(t_stack *stack_a, t_stack *stack_b);
 int	stck_rott_lft_double(t_stack *stack_a, t_stack *stack_b);
 int	stck_rott_rgt_double(t_stack *stack_a, t_stack *stack_b);
+
+// stack visualization
+
+void	stck_disp(t_stack *stack);
 
 #endif
