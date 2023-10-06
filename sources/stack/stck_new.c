@@ -21,11 +21,6 @@ t_stack	*stck_new(void **values, char id)
 	if (!output)
 		return (NULL);
 	list = dll_new_list(values);
-	if (!list && values)
-	{
-		free(output);
-		return (NULL);
-	}
 	output->id = id;
 	output->front = list;
 	if (list && list->next)

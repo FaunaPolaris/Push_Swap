@@ -29,6 +29,7 @@ void		dll_clear(t_dllist **head);
 
 int		dll_add_back(t_dllist *head, void *value);
 int		dll_add_frnt(t_dllist **head, void *value);
+int		dll_size(t_dllist *head);
 
 t_dllist	*dll_fnd_back(t_dllist *head);
 

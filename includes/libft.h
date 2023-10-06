@@ -50,7 +50,7 @@ unsigned int	fp_atox(char *s);
 /* print */
 int		fp_putchar_fd(char c, int fd);
 void	fp_putendl_fd(char *s, int fd);
-void	fp_putnbr_fd(int n, int fd);
+int	fp_putnbr_fd(int n, int fd);
 void	fp_putstr_fd(char *s, int fd);
 
 int	fp_putnbr_base(unsigned int nb, int base, int up);

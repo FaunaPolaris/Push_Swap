@@ -18,7 +18,7 @@ t_dllist	*dll_new_list(void **values)
 	t_dllist	*head;
 
 	i = 0;
-	if (!values || !values[0])
+	if (!values || !values[0] || *(char *)values[0] == '\0')
 		return (NULL);
 	head = (t_dllist *)fp_calloc(1, sizeof(t_dllist));
 	if (!head)

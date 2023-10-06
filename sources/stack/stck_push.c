@@ -18,7 +18,6 @@ int	stck_push(t_stack *donor, t_stack *receiver)
 
 	if (!donor->front)
 		return (0);
-	fp_printf("p%c\n", receiver->id);
 	donated = donor->front;
 	if (donor->front->next)
 	{

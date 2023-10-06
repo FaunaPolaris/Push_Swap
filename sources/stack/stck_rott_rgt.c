@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stck_swap.c                                        :+:      :+:    :+:   */
+/*   stck_rott_rgt.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpolaris <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 13:16:29 by fpolaris          #+#    #+#             */
-/*   Updated: 2023/10/06 13:16:30 by fpolaris         ###   ########.fr       */
+/*   Created: 2023/10/06 16:43:03 by fpolaris          #+#    #+#             */
+/*   Updated: 2023/10/06 16:43:04 by fpolaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
-int	stck_swap(t_stack * stack)
+int	stck_rott_rgt(t_stack *stack)
 {
-	if (!stack)
+	if (!stack->front || !stack->back)
 		return (0);
-	if (!stack->front)
-		return (0);
-	if (!stack->front->next)
-		return (0);
-	*(int *)stack->front->value ^= *(int *)stack->front->next->value;
-	*(int *)stack->front->next->value ^= *(int *)stack->front->value;
-	*(int *)stack->front->value ^= *(int *)stack->front->next->value;
+	if (stack->front->next == stack->back)
+		stck_swap(stack);
+	else
+	{
+		stack->back->next = stack->front;
+		stack->front->prev = stack->back;
+		stack->front = stack->back;
+		stack->back->prev->next = NULL;
+		stack->back = stack->back->prev;
+		stack->front->prev = NULL;
+	}
 	return (1);
 }
