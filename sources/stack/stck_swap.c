@@ -14,11 +14,7 @@
 
 int	stck_swap(t_stack * stack)
 {
-	if (!stack)
-		return (0);
-	if (!stack->front)
-		return (0);
-	if (!stack->front->next)
+	if (!stack || !stack->front || !stack->front->next)
 		return (0);
 	*(int *)stack->front->value ^= *(int *)stack->front->next->value;
 	*(int *)stack->front->next->value ^= *(int *)stack->front->value;

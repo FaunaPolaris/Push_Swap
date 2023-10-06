@@ -1,9 +1,10 @@
 #include "stack.h"
 
+t_stack	*stack_a;
+t_stack *stack_b;
+
 int	main(int argc, char **argv)
 {
-	t_stack	*stack_a;
-	t_stack *stack_b;
 	void	**values_a;
 	void	**values_b;
 
@@ -15,25 +16,19 @@ int	main(int argc, char **argv)
 		return (1);
 	stack_a = stck_new(values_a, 'a');
 	stack_b = stck_new(values_b, 'b');
-	stck_disp(stack_a);
-	stck_disp(stack_b);
-	write(1, "\n", 1);
-	stck_swap(stack_a);
-	stck_swap(stack_b);
-	stck_disp(stack_a);
-	stck_disp(stack_b);
-	write(1, "\n", 1);
-	stck_push(stack_a, stack_b);
-	stck_disp(stack_a);
-	stck_disp(stack_b);
-	write(1, "rotation tests:\n", 17);
-	stck_rott_rgt(stack_a);
-	stck_rott_lft(stack_b);
-	stck_disp(stack_a);
-	stck_disp(stack_b);
+	st_test_swap();
+	st_test_push();
+	st_test_rotate();
+	st_tests_reverse_rotate();
+	st_tests_doubles();
 	fp_grdfre((char **)values_a);
 	fp_grdfre((char **)values_b);
 	stck_rmv(stack_a);
 	stck_rmv(stack_b);
 	return (0);
+}
+
+static void	st_test_swap(void)
+{
+	fp_printf("initializing swap tests");
 }
