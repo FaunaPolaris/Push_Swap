@@ -34,36 +34,36 @@ void	dll_putlist(t_dllist *head, char value_type, int fd)
 
 static void	st_print_as_char(t_dllist *head, int fd)
 {
-	while (head->next)
+	while (head)
 	{
 		fp_putchar_fd(*(char *)head->value, fd);
-		write(fd, "\n", 1);
+		if (head->next)
+			write(fd, " <- -> ", 7);
 		head = head->next;
 	}
-	fp_putchar_fd(*(char *)head->value, fd);
 	write(fd, "\n", 1);
 }
 
 static void	st_print_as_string(t_dllist *head, int fd)
 {
-	while (head->next)
+	while (head)
 	{
 		fp_putstr_fd((char *)head->value, fd);
-		write(fd, "\n", 1);
+		if (head->next)
+			write(fd, " <- -> ",7);
 		head = head->next;
 	}
-	fp_putstr_fd((char *)head->value, fd);
 	write(fd, "\n", 1);
 }
 
 static void	st_print_as_int(t_dllist *head, int fd)
 {
-	while (head->next)
+	while (head)
 	{
 		fp_putnbr_fd(fp_atoi((char *)head->value), fd);
-		write(fd, "\n", 1);
+		if (head->next)
+			write(fd, " <- -> ", 7);
 		head = head->next;
 	}
-	fp_putnbr_fd(fp_atoi((char *)head->value), fd);
 	write(fd, "\n", 1);
 }
