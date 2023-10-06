@@ -1,3 +1,6 @@
 [submodule "sources/libft"]
 	path = sources/libft
 	url = git@github.com:FaunaPolaris/libft.git
+[submodule "includes/minunit"]
+	path = includes/minunit
+	url = git@github.com:tdd42sp/minunit-42.git

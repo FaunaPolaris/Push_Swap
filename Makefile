@@ -4,7 +4,7 @@ LIBLINK		=	-L ./sources/libft/ -lft -lm
 INCLUDES	=	-I ./includes $(LIBLINK)
 
 SRCS_DLLIST	=	add_back.c add_frnt.c clear.c fnd_end.c new_list.c new_node.c new_rlist.c putlist.c size.c
-SRCS_STACK	=	new.c swap.c swap_double.c push.c rott_lft.c rott_lft_double.c rott_rgt_double.c rott_rgt.c disp.c
+SRCS_STACK	=	new.c swap.c push.c rott_lft.c rott_rgt.c disp.c
 
 SRCS_ALL	=	$(addprefix sources/linked_list/dll_,$(SRCS_DLLIST))
 SRCS_ALL	+=	$(addprefix sources/stack/stck_,$(SRCS_STACK))

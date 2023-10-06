@@ -1,4 +1,5 @@
 #include "llist.h"
+// #include <minunit.h>
 
 int	arg_size;
 
@@ -28,8 +29,6 @@ static void	st_test_next_prev_pointers(t_dllist *head)
 	{
 		fp_printf("Back reference lost on node %i\n", i);
 	}
-	
-
 }
 
 int	main(int argc, char **argv)
