@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_swap.c                                       :+:      :+:    :+:   */
+/*   ft_dladdtop.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 17:15:56 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/07 19:11:20 by nicolas          ###   ########.fr       */
+/*   Created: 2023/10/07 19:04:07 by nicolas           #+#    #+#             */
+/*   Updated: 2023/10/07 19:10:41 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stacks.h>
+#include "libft.h"
 
-int	swap_stack(t_stack *stack)
+void	ft_dlnew(int value)
 {
-	if (!stack->top)
-	{	
-		ft_putstr("Error: stack is undefined", 2);
-		return (0);
-	}
-	if (stack->top->next)
-	{
-		stack->top->value ^= stack->top->next->value;
-		stack->top->next->value ^= stack->top->value;
-		stack->top->value ^= stack->top->next->value;
-		return (1);
-	}
-	return (0);
+	t_dlist *node;
+
+	node = (t_dlist *)ft_calloc(1, sizeof(t_dlist));
+	if (!node)
+		return (NULL);
+	node->value = value;
+	node->prev = NULL;
+	node->next = NULL;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_rotate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 15:56:05 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/06 18:54:33 by nprudenc         ###   ########.fr       */
+/*   Updated: 2023/10/07 18:37:57 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 int	stack_rotate(t_stack *stack)
 {
-	if (!stack->back)
+	if (!stack->btm)
 	{
-		ft_putstr_fd("Error: stack back is undefined!", 2);
+		ft_putstr_fd("Error: stack btm is undefined!", 2);
 		return (0);
 	}
-	if (stack->front)
+	if (stack->top)
 	{	
-		if (stack->front->next == stack->back)
+		if (stack->top->next == stack->btm)
 			swap_stack(stack);
 		else
 		{
-			stack->back->next = stack->front;
-			stack->front->prev = stack->back;
-			stack->front = stack->back;
-			stack->front->prev->next = NULL;
-			stack->back = stack->back->prev;
-			stack->front->prev = NULL;
+			stack->btm->next = stack->top;
+			stack->top->prev = stack->btm;
+			stack->top = stack->btm;
+			stack->top->prev->next = NULL;
+			stack->btm = stack->btm->prev;
+			stack->top->prev = NULL;
 		}
 		return (1);
 	}

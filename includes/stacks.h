@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stacks.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:06:58 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/06 18:55:00 by nprudenc         ###   ########.fr       */
+/*   Updated: 2023/10/07 18:36:52 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 typedef struct s_stack
 {
-	t_dlist	*front;
-	t_dlist	*back;
+	t_dlist	*top;
+	t_dlist	*btm;
 }				t_stack;
 
 int	stack_swap(t_stack *stack);

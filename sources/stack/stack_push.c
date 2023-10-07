@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_push.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:41:59 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/06 18:54:13 by nprudenc         ###   ########.fr       */
+/*   Updated: 2023/10/07 18:37:30 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 int	stack_push(t_stack *stack_a, t_stack *stack_b)
 {
-	t_dlist	*stack_af;
-	t_dlist	*stack_bf;
+	t_dlist	*stack_at;
+	t_dlist	*stack_bt;
 
 	if (!stack_a || !stack_b)
 	{
 		ft_putstr_fd("Error: stack_a or stack_b is undefined!", 2);
 		return (0);
 	}
-	if (stack_b->front->next)
-		stack_bf = stack_b->front->next;
+	if (stack_b->top->next)
+		stack_bt = stack_b->top->next;
 	else
-		stack_bf = NULL;
-	stack_af = stack_a->front;
-	stack_af->prev = stack_b->front;
-	stack_a->front = stack_b->front;
-	stack_a->front->next = stack_af;
-	stack_b->front = stack_bf;
-	stack_bf->prev = NULL;
+		stack_bt = NULL;
+	stack_at = stack_a->top;
+	stack_at->prev = stack_b->top;
+	stack_a->top = stack_b->top;
+	stack_a->top->next = stack_at;
+	stack_b->top = stack_bt;
+	stack_bt->prev = NULL;
 }
