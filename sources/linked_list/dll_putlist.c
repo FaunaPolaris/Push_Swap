@@ -36,7 +36,7 @@ static void	st_print_as_char(t_dllist *head, int fd)
 {
 	while (head)
 	{
-		fp_putchar_fd(*(char *)head->value, fd);
+		fp_putchar_fd(*(char *)head->as_void, fd);
 		if (head->next)
 			write(fd, " <- -> ", 7);
 		head = head->next;
@@ -48,7 +48,7 @@ static void	st_print_as_string(t_dllist *head, int fd)
 {
 	while (head)
 	{
-		fp_putstr_fd((char *)head->value, fd);
+		fp_putstr_fd((char *)head->as_void, fd);
 		if (head->next)
 			write(fd, " <- -> ",7);
 		head = head->next;
@@ -60,7 +60,7 @@ static void	st_print_as_int(t_dllist *head, int fd)
 {
 	while (head)
 	{
-		fp_putnbr_fd(fp_atoi((char *)head->value), fd);
+		fp_putnbr_fd(fp_atoi((char *)head->as_void), fd);
 		if (head->next)
 			write(fd, " <- -> ", 7);
 		head = head->next;

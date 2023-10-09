@@ -17,7 +17,7 @@ void	stck_disp(t_stack *stack)
 	line_limit = sqrt(stack_len);
 	for (int i = 1; walker; i++)
 	{
-		fp_printf("| %4i |", fp_atoi((char *)walker->value));
+		fp_printf("| %4i |", walker->as_int);
 		if (i == line_limit)
 		{
 			write (1, "\n", 1);
@@ -27,7 +27,7 @@ void	stck_disp(t_stack *stack)
 	}
 	if (stack->front && stack->back)
 		fp_printf("\033[1;32m%i | %i \033[0m\n",
-				fp_atoi((char *)stack->front->value),
-				fp_atoi((char *)stack->back->value));
+				fp_atoi(stack->front->as_str),
+				fp_atoi(stack->back->as_str));
 	write (1, "\n", 1);
 }

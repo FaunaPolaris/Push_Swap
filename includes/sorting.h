@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dll_new_node.c                                     :+:      :+:    :+:   */
+/*   sorting.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpolaris <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 14:16:22 by fpolaris          #+#    #+#             */
-/*   Updated: 2023/10/04 14:16:23 by fpolaris         ###   ########.fr       */
+/*   Created: 2023/10/09 17:33:20 by fpolaris          #+#    #+#             */
+/*   Updated: 2023/10/09 17:47:49 by fpolaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "llist.h"
+#ifndef SORTING_H
+#define SORTING_H
 
-t_dllist	*dll_new_node(void *value)
-{
-	t_dllist	*output;
+#include "stack.h"
 
-	output = (t_dllist *)fp_calloc(1, sizeof(t_dllist));
-	if (!output)
-		return (NULL);
-	output->as_void = value;
-	output->as_int = fp_atoi((char *)value);
-	output->as_str = (char *)value;
-	output->next = NULL;
-	output->prev = NULL;
-	return (output);
-}
+void	sort_quick(t_stack *stack_a, t_stack *stack_b);
+
+#endif

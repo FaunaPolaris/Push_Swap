@@ -6,7 +6,7 @@
 /*   By: fpolaris <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 13:27:50 by fpolaris          #+#    #+#             */
-/*   Updated: 2023/10/06 13:27:52 by fpolaris         ###   ########.fr       */
+/*   Updated: 2023/10/09 18:01:56 by fpolaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	stck_push(t_stack *donor, t_stack *receiver)
 	if (!receiver->front)
 	{
 		receiver->front = donated;
+		receiver->back = donated;
 		donated->next = NULL;
 	}
 	else

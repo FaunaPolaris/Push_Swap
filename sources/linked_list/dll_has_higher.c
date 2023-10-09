@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dll_new_node.c                                     :+:      :+:    :+:   */
+/*   dll_has_higher.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpolaris <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 14:16:22 by fpolaris          #+#    #+#             */
-/*   Updated: 2023/10/04 14:16:23 by fpolaris         ###   ########.fr       */
+/*   Created: 2023/10/09 18:46:29 by fpolaris          #+#    #+#             */
+/*   Updated: 2023/10/09 18:46:34 by fpolaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "llist.h"
 
-t_dllist	*dll_new_node(void *value)
+int	dll_has_higher(t_dllist *head, int compare)
 {
-	t_dllist	*output;
+	t_dllist	*temp;
 
-	output = (t_dllist *)fp_calloc(1, sizeof(t_dllist));
-	if (!output)
-		return (NULL);
-	output->as_void = value;
-	output->as_int = fp_atoi((char *)value);
-	output->as_str = (char *)value;
-	output->next = NULL;
-	output->prev = NULL;
-	return (output);
+	if (!head)
+		return (0);
+	temp = head;
+	while (temp)
+	{
+		if (temp->as_int > compare)
+			return (1);
+		temp = temp->next;
+	}
+	return (0);
 }

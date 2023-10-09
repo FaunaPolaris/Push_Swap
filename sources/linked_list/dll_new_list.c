@@ -23,7 +23,9 @@ t_dllist	*dll_new_list(void **values)
 	head = (t_dllist *)fp_calloc(1, sizeof(t_dllist));
 	if (!head)
 		return (NULL);
-	head->value = values[0];
+	head->as_void = values[0];
+	head->as_int = fp_atoi((char *)values[0]);
+	head->as_str = (char *)values[0];
 	while (values[++i])
 	{
 		if (!dll_add_back(head, values[i]))

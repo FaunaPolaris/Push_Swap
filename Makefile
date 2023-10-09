@@ -4,10 +4,13 @@ LIBLINK		=	-L ./sources/libft/ -lft -lm
 INCLUDES	=	-I ./includes $(LIBLINK)
 
 SRCS_DLLIST	=	add_back.c add_frnt.c clear.c fnd_end.c new_list.c new_node.c new_rlist.c putlist.c size.c
+SRCS_DLLIST	+=	has.c has_higher.c has_lower.c
 SRCS_STACK	=	new.c swap.c push.c rott_lft.c rott_rgt.c disp.c
+SRCS_SORT	=	quick.c
 
 SRCS_ALL	=	$(addprefix sources/linked_list/dll_,$(SRCS_DLLIST))
 SRCS_ALL	+=	$(addprefix sources/stack/stck_,$(SRCS_STACK))
+SRCS_ALL	+=	$(addprefix sources/sorting/sort_,$(SRCS_SORT))
 
 TOTAL_FILES	:=	$(words $(SRCS_ALL))
 COMPILED_FILES	:=	0
@@ -17,6 +20,9 @@ OBJS_ALL	=	$(addprefix $(OBJS_DIR)/,$(SRCS_ALL:.c=.o))
 
 TMAIN_STACK	=	tests/stck_test.c
 TMAIN_LLIST	=	tests/dllist_test.c
+TMAIN_ROTATE	=	tests/rotate_test.c
+TMAIN_PUSH	=	tests/push_test.c
+TMAIN_QSORT	=	tests/quick_sort_test.c
 
 ANSI		=	\033[0
 RED		=	;31
@@ -35,7 +41,7 @@ $(OBJS_DIR)/%.o:%.c
 	@echo -n "Compiled $(COMPILED_FILES) out of $(TOTAL_FILES)"
 	@echo " ($(ANSI)$(GREEN)m$(shell echo 'scale=2; $(COMPILED_FILES) / $(TOTAL_FILES) * 100' | bc)%$(ANSI)m)"
 
-tests: $(OBJS_ALL) dllist_test stack_test
+tests: $(OBJS_ALL) dllist_test stack_test push_test rotate_test quick_sort
 
 dllist_test:
 	@$(CC) $(C_FLAGS) $(OBJS_ALL) $(TMAIN_LLIST) $(INCLUDES) -o $@
@@ -56,9 +62,24 @@ stack_test:
 	@printf "a empty string will create an empty stack\n\n"
 	@printf "%10s\n" "----------"
 
+quick_sort:
+	@$(CC) $(C_FLAGS) $(OBJS_ALL) $(TMAIN_QSORT) $(INCLUDES) -o $@
+	@printf "%-10s$(ANSI)$(GREEN)m%15s$(ANSI)m\n" "quick_sort" "compiled"
+
+rotate_test:
+	@$(CC) $(C_FLAGS) $(OBJS_ALL) $(TMAIN_ROTATE) $(INCLUDES) -o $@
+	@printf "%-10s$(ANSI)$(GREEN)m%15s$(ANSI)m\n" "rotate_test" "compiled"
+
+push_test:
+	@$(CC) $(C_FLAGS) $(OBJS_ALL) $(TMAIN_PUSH) $(INCLUDES) -o $@
+	@printf "%-10s$(ANSI)$(GREEN)m%15s$(ANSI)m\n" "push_test" "compiled"
+
 tests_fclean:
 	@rm -rf stack_test
 	@rm -f dllist_test
+	@rm -f quick_sort
+	@rm -f push_test
+	@rm -f rotate_test
 	@printf "%-20s$(ANSI)$(RED)m%-15s$(ANSI)m\n" "Tests" "removed"
 
 clean:

@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dll_new_node.c                                     :+:      :+:    :+:   */
+/*   quick_sort_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpolaris <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 14:16:22 by fpolaris          #+#    #+#             */
-/*   Updated: 2023/10/04 14:16:23 by fpolaris         ###   ########.fr       */
+/*   Created: 2023/10/09 17:47:05 by fpolaris          #+#    #+#             */
+/*   Updated: 2023/10/09 17:55:02 by fpolaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "llist.h"
+#include "sorting.h"
 
-t_dllist	*dll_new_node(void *value)
+t_stack	*stack_a;
+t_stack *stack_b;
+void	**as_voids_a;
+
+int	main(int argc, char **argv)
 {
-	t_dllist	*output;
-
-	output = (t_dllist *)fp_calloc(1, sizeof(t_dllist));
-	if (!output)
-		return (NULL);
-	output->as_void = value;
-	output->as_int = fp_atoi((char *)value);
-	output->as_str = (char *)value;
-	output->next = NULL;
-	output->prev = NULL;
-	return (output);
+	if (argc != 2)
+		return (1);
+	as_voids_a = (void **)fp_split(argv[1], ' ');
+	if (!as_voids_a)
+		return (1);
+	stack_a = stck_new(as_voids_a, 'a');
+	stack_b = stck_new(NULL, 'b');
+	stck_disp(stack_a);
+	stck_disp(stack_b);
+	sort_quick(stack_a, stack_b);
+	return (0);
 }

@@ -12,14 +12,18 @@
 
 #include "stack.h"
 
-int	stck_swap(t_stack * stack)
+int	stck_swap(t_stack *stack)
 {
 	void	*temp;
 
 	if (!stack || !stack->front || !stack->front->next)
 		return (0);
-	temp = stack->front->next->value;
-	stack->front->next->value = stack->front->value;
-	stack->front->value = temp;
+	temp = stack->front->next->as_void;
+	stack->front->next->as_void = stack->front->as_void;
+	stack->front->as_void = temp;
+	stack->front->next->as_int = stack->front->as_int;
+	stack->front->as_int = fp_atoi((char *)temp);
+	stack->front->next->as_str = stack->front->as_str;
+	stack->front->as_str = (char *)temp;
 	return (1);
 }
