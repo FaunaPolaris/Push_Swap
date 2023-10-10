@@ -48,7 +48,7 @@ static void	st_print_as_string(t_dllist *head, int fd)
 {
 	while (head)
 	{
-		fp_putstr_fd((char *)head->as_void, fd);
+		fp_putstr_fd(head->as_str, fd);
 		if (head->next)
 			write(fd, " <- -> ",7);
 		head = head->next;

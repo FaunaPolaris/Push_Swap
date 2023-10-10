@@ -12,12 +12,15 @@
 
 #include "stack.h"
 
-int	stck_rott_rgt(t_stack *stack)
+int	stck_rott_rgt(t_stack *stack, int print)
 {
 	if (!stack->front || !stack->back)
 		return (0);
 	if (stack->front->next == stack->back)
-		stck_swap(stack);
+	{
+		stck_swap(stack, 1);
+		return (1);
+	}
 	else
 	{
 		stack->back->next = stack->front;
@@ -27,5 +30,7 @@ int	stck_rott_rgt(t_stack *stack)
 		stack->back = stack->back->prev;
 		stack->front->prev = NULL;
 	}
+	if (print)
+		fp_printf("rr%c\n", stack->id);
 	return (1);
 }

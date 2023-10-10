@@ -6,7 +6,7 @@
 /*   By: fpolaris <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:47:05 by fpolaris          #+#    #+#             */
-/*   Updated: 2023/10/09 17:55:02 by fpolaris         ###   ########.fr       */
+/*   Updated: 2023/10/10 16:29:19 by fpolaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ int	main(int argc, char **argv)
 		return (1);
 	stack_a = stck_new(as_voids_a, 'a');
 	stack_b = stck_new(NULL, 'b');
-	stck_disp(stack_a);
-	stck_disp(stack_b);
+//	stck_disp(stack_a);
+//	stck_disp(stack_b);
 	sort_quick(stack_a, stack_b);
+//	stck_disp(stack_a);
+//	stck_disp(stack_b);
 	return (0);
 }

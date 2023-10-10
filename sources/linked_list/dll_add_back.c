@@ -12,10 +12,10 @@
 
 #include "llist.h"
 
-int	dll_add_back(t_dllist *head, void *value)
+int	dll_add_back(t_dllist *head, void *value, int padding)
 {
 	head = dll_fnd_back(head);
-	head->next = dll_new_node(value);
+	head->next = dll_new_node(value, padding);
 	if (!head->next)
 		return (0);
 	head->next->prev = head;

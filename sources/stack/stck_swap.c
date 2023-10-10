@@ -12,7 +12,7 @@
 
 #include "stack.h"
 
-int	stck_swap(t_stack *stack)
+int	stck_swap(t_stack *stack, int print)
 {
 	void	*temp;
 
@@ -25,5 +25,7 @@ int	stck_swap(t_stack *stack)
 	stack->front->as_int = fp_atoi((char *)temp);
 	stack->front->next->as_str = stack->front->as_str;
 	stack->front->as_str = (char *)temp;
+	if (print)
+		fp_printf("s%c\n", stack->id);
 	return (1);
 }

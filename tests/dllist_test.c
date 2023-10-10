@@ -3,7 +3,7 @@
 
 int	arg_size;
 
-static void	st_test_next_prev_pointers(t_dllist *head)
+void	dll_test_next_prev_pointers(t_dllist *head)
 {
 	t_dllist	*aux = head;
 	int	i = 0;
@@ -44,10 +44,19 @@ int	main(int argc, char **argv)
 	normal_list = dll_new_list(values);
 	reverse_list = dll_new_rlist(values);
 	dll_putlist(normal_list, argv[2][0], 1);
+	fp_printf("highest value: %i\n", dll_highest(normal_list));
+	fp_printf("lowest value: %i\n", dll_lowest(normal_list));
+	fp_printf("median value: %i\n", dll_mediam(normal_list));
+
 	write(1, "\n", 1);
+
 	dll_putlist(reverse_list, argv[2][0], 1);
-	st_test_next_prev_pointers(normal_list);
-	st_test_next_prev_pointers(reverse_list);
+	fp_printf("highest value: %i\n", dll_highest(reverse_list));
+	fp_printf("lowest value: %i\n", dll_lowest(reverse_list) );
+	fp_printf("median value: %i\n", dll_mediam(reverse_list));
+
+	dll_test_next_prev_pointers(normal_list);
+	dll_test_next_prev_pointers(reverse_list);
 	dll_clear(&normal_list);
 	dll_clear(&reverse_list);
 	for (int i = 0; values[i]; i++)

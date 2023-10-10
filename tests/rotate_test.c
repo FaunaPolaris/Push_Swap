@@ -14,7 +14,7 @@ int	main(int argc, char **argv)
 	stck_disp(stack_a);
 	for (int size = dll_size(stack_a->front);size != 0; size--)
 	{
-		stck_rott_rgt(stack_a);
+		stck_rott_rgt(stack_a, 1);
 		stck_disp(stack_a);
 	}
 	return (0);

@@ -14,7 +14,8 @@
 
 int	stck_rott_lft_double(t_stack *stack_a, t_stack *stack_b)
 {
-	stck_rott_lft(stack_a);
-	stck_rott_lft(stack_b);
+	stck_rott_lft(stack_a, 0);
+	stck_rott_lft(stack_b, 0);
+	fp_putendl_fd("rr", 1);
 	return (1);
 }

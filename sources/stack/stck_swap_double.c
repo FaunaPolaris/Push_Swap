@@ -14,7 +14,8 @@
 
 int	stck_swap_double(t_stack *stack_a, t_stack *stack_b)
 {
-	stck_swap(stack_a);
-	stck_swap(stack_b);
+	stck_swap(stack_a, 0);
+	stck_swap(stack_b, 0);
+	fp_putendl_fd("ss", 1);
 	return (1);
 }

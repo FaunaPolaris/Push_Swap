@@ -4,9 +4,9 @@ LIBLINK		=	-L ./sources/libft/ -lft -lm
 INCLUDES	=	-I ./includes $(LIBLINK)
 
 SRCS_DLLIST	=	add_back.c add_frnt.c clear.c fnd_end.c new_list.c new_node.c new_rlist.c putlist.c size.c
-SRCS_DLLIST	+=	has.c has_higher.c has_lower.c
-SRCS_STACK	=	new.c swap.c push.c rott_lft.c rott_rgt.c disp.c
-SRCS_SORT	=	quick.c
+SRCS_DLLIST	+=	has.c has_higher.c has_lower.c highest.c lowest.c mediam.c
+SRCS_STACK	=	new.c swap.c push.c rott_lft.c rott_rgt.c disp.c push_all.c push_higher.c push_lower.c
+SRCS_SORT	=	quick.c  from_lower.c
 
 SRCS_ALL	=	$(addprefix sources/linked_list/dll_,$(SRCS_DLLIST))
 SRCS_ALL	+=	$(addprefix sources/stack/stck_,$(SRCS_STACK))
@@ -92,7 +92,6 @@ fclean: tests_fclean clean
 
 tests_re: tests_fclean tests
 
-tests_re: tests_fclean tests
 
 re: fclean all
 

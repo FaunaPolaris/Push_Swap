@@ -15,7 +15,7 @@ MU_TEST(swap_test)
 	second = *(int *)stack_a->front->next->as_void;
 
 	stck_disp(stack_a);
-	stck_swap(stack_a);
+	stck_swap(stack_a, 1);
 	mu_check(*(int *)stack_a->front->as_void == second);
 	mu_check(*(int *)stack_a->front->next->as_void == first);
 	stck_disp(stack_a);
@@ -26,12 +26,12 @@ MU_TEST(swap_test)
 	second = *(int *)stack_b->front->next->as_void;
 
 	stck_disp(stack_b);
-	stck_swap(stack_b);
+	stck_swap(stack_b, 1);
 	mu_check(*(int *)stack_b->front->as_void == second);
 	mu_check(*(int *)stack_b->front->next->as_void == first);
 	stck_disp(stack_b);
-	stck_swap(stack_a);
-	stck_swap(stack_b);
+	stck_swap(stack_a, 1);
+	stck_swap(stack_b, 1);
 }
 
 MU_TEST_SUITE(stack_movement_tests)

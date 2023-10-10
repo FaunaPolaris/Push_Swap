@@ -16,7 +16,7 @@ int	stck_push(t_stack *donor, t_stack *receiver)
 {
 	t_dllist	*donated;
 
-	if (!donor->front)
+	if (!donor || !receiver || !donor->front)
 		return (0);
 	donated = donor->front;
 	if (donor->front->next)
@@ -38,5 +38,6 @@ int	stck_push(t_stack *donor, t_stack *receiver)
 		donated->next = receiver->front;
 		receiver->front = donated;
 	}
+	fp_printf("p%c\n", receiver->id);
 	return (1);
 }
