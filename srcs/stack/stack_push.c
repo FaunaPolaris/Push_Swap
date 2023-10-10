@@ -6,7 +6,7 @@
 /*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:41:59 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/10 17:01:21 by nprudenc         ###   ########.fr       */
+/*   Updated: 2023/10/10 17:13:30 by nprudenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,30 +45,4 @@ int	stack_push_ab(t_stack *stack_a, t_stack *stack_b)
 		stack_a->top = a_top;
 	}
 	return (1);
-}
-
-int main(void)
-{
-	t_stack *stck_a = ft_calloc(1, sizeof(t_stack));
-	t_stack *stck_b = ft_calloc(1, sizeof(t_stack));
-	int	i = -1;
-	stck_b->top = NULL;
-	stck_b->btm = NULL;
-	stck_a->top = ft_calloc(1, sizeof(t_dlist));
-	stck_a->btm = ft_calloc(1, sizeof(t_dlist));
-	while (++i < 5)
-		ft_dladdtop(&stck_a->top,ft_dlnew(i));
-	ft_printf("stack_a:\n");
-	print_stack(stck_a);
-	stack_push_ab(stck_a, stck_b);
-	stack_push_ab(stck_a, stck_b);
-	stack_push_ab(stck_a, stck_b);
-	stack_push_ab(stck_a, stck_b);
-	ft_printf("stack_b:\n");
-	print_stack(stck_b);
-	ft_printf("stack_a:\n");
-	print_stack(stck_a);
-	i = -1;
-	
-	return (0);
 }
