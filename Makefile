@@ -1,26 +1,26 @@
 CC			=	cc
 C_FLAGS		=	-Wall -Wextra -Werror -g3 -ggdb
 LIBFT_DIR	=	./utils/libft/src
-LIBS_LINK	=	-L $(LIBFT_DIR) -lrt -lm -lft
-MINUNIT		=	-I ./includes/minunit 
-INCLUDE		=	-I ./includes
+LIBS_LINK	=	-L $(LIBFT_DIR) -lm -lft
+INCLUDE		=	-I ./includes $(LIBS_LINK)
 
 STACK_SRCS	=	swap.c
 
 STACK_SRCS	=	$(addprefix srcs/stack/,$(STACK_SRCS))
 
-OBJS_DIR		=	objs
+OBJS_DIR	=	objs
 OBJS_ALL	=	$(addprefix $(OBJS_DIR)/,$(SRCS_SERVER:.c=.o))
+STCKS_PTH	=	srcs/stack/
 
-
-MAIN = main.c
+STCK_PREFIX = $(addprefix $(STCKS_PTH), $(STCK_TESTS))
+STCK_TESTS = stack_push.c ft_dladdtop.c ft_dlnew.c stack_print.c
 
 ANSI		=	\033[0
 YELLOW		=	;33
 GREEN		=	;32
 RED			=	;31
 
-all: $(OBJS_ALL) libft_make
+all: $(OBJS_ALL) libft_make swap
 
 libft_make:
 	@make -C $(LIBFT_DIR)
@@ -30,8 +30,8 @@ $(OBJS_DIR)/%.o:%.c
 	@$(CC) $(C_FLAGS) -c $< -o $@ $(INCLUDE)
 
 swap: $(OBJS_ALL)
-	@$(CC) $(C_FLAGS) $(OBJS_ALL) $(MAIN_NIKKO) $(INCLUDE) -o push_swap $(LIBS_LINK)
-	@printf "%s$(ANSI)$(YELLOW)m%-15s$(ANSI)m\n" "client_nikko:" "Compiled"
+	@$(CC) $(C_FLAGS) $(OBJS_ALL) $(STCK_PREFIX) $(INCLUDE) -o push_swap
+	@printf "%s$(ANSI)$(GREEN)m%-15s$(ANSI)m\n" "push_swap:" "Compiled"
 
 clean:
 	@rm -rf $(OBJS_DIR)

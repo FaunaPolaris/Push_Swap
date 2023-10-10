@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:14:18 by nprudenc          #+#    #+#             */
-/*   Updated: 2023/10/07 19:09:51 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/10 16:37:30 by nprudenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,12 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*get_next_line(int fd);
 int		ft_gridlen(char **grid);
+int		ft_putchar(char c);
+int		ft_printstr(char *s);
+int		ft_putnbr(int n);
+int		ft_print_long(int n);
+int		ft_print_hex(unsigned int nb, char c);
+int		ft_print_ptr(unsigned long nb);
+int		ft_printf(const char *str, ...);
 
 #endif

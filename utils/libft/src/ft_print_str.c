@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/22 14:14:22 by nprudenc          #+#    #+#             */
-/*   Updated: 2023/10/09 17:28:47 by nprudenc         ###   ########.fr       */
+/*   Created: 2023/06/24 13:30:46 by nprudenc          #+#    #+#             */
+/*   Updated: 2023/09/29 17:16:22 by nprudenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
-{
-	if (!lst || !new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+int	ft_printstr(char *s)
+{	
+	int	i;
+
+	i = 0;
+	if (!s)
+		return (write(1, "(null)", 6));
+	while (s[i])
+		ft_putchar(s[i++]);
+	return (i);
 }

@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_dladdtop.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/22 14:14:22 by nprudenc          #+#    #+#             */
-/*   Updated: 2023/10/09 17:28:47 by nprudenc         ###   ########.fr       */
+/*   Created: 2023/10/07 19:13:59 by nicolas           #+#    #+#             */
+/*   Updated: 2023/10/10 16:20:58 by nprudenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_dladdtop(t_dlist **top, t_dlist *node)
 {
-	if (!lst || !new)
+	if (!node)
 		return ;
-	new->next = *lst;
-	*lst = new;
+	if (*top)
+	{
+		(*top)->prev = node;
+		node->next = *top;
+		*top = node;
+	}
+	else
+		*top = node;
 }

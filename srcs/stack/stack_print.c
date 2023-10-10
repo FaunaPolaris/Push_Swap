@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   stack_print.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/22 14:14:22 by nprudenc          #+#    #+#             */
-/*   Updated: 2023/10/09 17:28:47 by nprudenc         ###   ########.fr       */
+/*   Created: 2023/10/10 16:29:14 by nprudenc          #+#    #+#             */
+/*   Updated: 2023/10/10 16:53:45 by nprudenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stacks.h"
+#include <stdio.h>
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	print_stack(t_stack *stack)
 {
-	if (!lst || !new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+	t_dlist	*temp;
+	
+	temp = stack->top;
+	ft_printf("*********\n");
+	while (temp)
+	{
+		printf("*%4d   *\n", temp->value);
+		temp = temp->next;
+	}
+	ft_printf("*********\n");
 }

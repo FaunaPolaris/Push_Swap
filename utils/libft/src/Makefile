@@ -16,7 +16,10 @@ ft_atoi.c ft_calloc.c ft_putchar_fd.c \
  ft_split.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 ft_lstclear.c ft_lstiter.c ft_lstmap.c \
-ft_atox.c get_next_line.c ft_gridlen.c
+ft_atox.c get_next_line.c ft_gridlen.c \
+ft_printf.c ft_print_char.c ft_print_hex.c \
+ ft_print_long.c ft_print_nbr.c ft_print_str.c \
+ft_print_pointer.c
 OBJS = $(SRCS:%.c=./obj/%.o)
 FLAGS = -Werror -Wextra -Wall -g
 
@@ -27,7 +30,7 @@ $(NAME): $(OBJS)
 ./obj/%.o: %.c
 	@mkdir -p obj
 	$(CC) $(FLAGS) -I../../../includes -c $< -o $@
-	ar -rcs -o ../$(NAME) $@
+	ar -rcs -o $(NAME) $@
 
 clean:
 	$(RM) ./obj
