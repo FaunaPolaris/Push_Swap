@@ -27,7 +27,7 @@ void	sort_quick(t_stack *stack_a, t_stack *stack_b)
 			stck_swap(stack_a, 1);
 		return ;
 	}
-
+	stck_push_lower(dll_mediam(stack_a->front), stack_a, stack_b);
 	sort_from_lower(stack_a, stack_b);
 	sort_from_lower(stack_b, stack_a);
 	stck_push_all(stack_b, stack_a);

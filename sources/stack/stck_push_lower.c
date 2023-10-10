@@ -7,14 +7,8 @@ int	stck_push_lower(int than, t_stack *from, t_stack *to)
 
 	i = -1;
 	size = dll_size(from->front);
-	while (++i <= size && from->front)
+	while (dll_has_lower(from->front, than))
 	{
-		if (!dll_has_lower(from->front, than))
-		{
-			if (from->front->next)
-				stck_swap(from, 1);
-			break ;
-		}
 		if (from->front->as_int < than)
 			stck_push(from, to);
 		else
