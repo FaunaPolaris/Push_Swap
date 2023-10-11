@@ -18,6 +18,8 @@ void	**as_voids_a;
 
 int	main(int argc, char **argv)
 {
+	int	i;
+
 	if (argc != 2)
 		return (1);
 	as_voids_a = (void **)fp_split(argv[1], ' ');
@@ -25,10 +27,12 @@ int	main(int argc, char **argv)
 		return (1);
 	stack_a = stck_new(as_voids_a, 'a');
 	stack_b = stck_new(NULL, 'b');
-//	stck_disp(stack_a);
-//	stck_disp(stack_b);
-	sort_quick(stack_a, stack_b);
-//	stck_disp(stack_a);
-//	stck_disp(stack_b);
+	int	highest = dll_highest(stack_a->front);
+	for (i = 0; highest > 0; highest /= 10)
+		i++;
+	fp_printf("i: %i, base: %i\n", i, (int)pow(10, (i - 1)));
+	sort_by_base(stack_a, stack_b, 10);
+	stck_push_all(stack_b, stack_a);
+	stck_disp(stack_a);
 	return (0);
 }

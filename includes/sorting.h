@@ -15,7 +15,13 @@
 
 #include "stack.h"
 
+typedef struct s_sort_info
+{
+	int	digit[10];
+}	t_sort_info;
+
 void	sort_quick(t_stack *stack_a, t_stack *stack_b);
 void	sort_from_lower(t_stack *stack_a, t_stack *stack_b);
+void	sort_by_base(t_stack *stack_a, t_stack *stack_b, int base);
 
 #endif

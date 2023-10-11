@@ -33,7 +33,6 @@ void		dll_clear(t_dllist **head);
 
 int		dll_add_back(t_dllist *head, void *value, int padding);
 int		dll_add_frnt(t_dllist **head, void *value, int padding);
-int		dll_size(t_dllist *head);
 
 // doubly linked list utilities
 
@@ -41,9 +40,15 @@ int		dll_has(t_dllist *head, int find);
 int		dll_has_lower(t_dllist *head, int compare);
 int		dll_has_higher(t_dllist *head, int compare);
 
+int		dll_next_lower(t_dllist *head, int than);
+int		dll_next_higher(t_dllist *head, int than);
+
 int		dll_highest(t_dllist *head);
 int		dll_lowest(t_dllist *head);
 int		dll_mediam(t_dllist *head);
+
+int		dll_size(t_dllist *head);
+int		dll_index(t_dllist *head, int of);
 
 t_dllist	*dll_fnd_back(t_dllist *head);
 

@@ -3,17 +3,17 @@
 int	dll_highest(t_dllist *head)
 {
 	t_dllist	*temp;
-	int		higher;
+	int		highest;
 
 	if (!head)
 		return(0);
 	temp = head;
-	higher = temp->as_int;;
+	highest = temp->as_int;;
 	while (temp)
 	{
-		if (temp->as_int > higher)
-			higher = temp->as_int;
+		if (temp->as_int > highest)
+			highest = temp->as_int;
 		temp = temp->next;
 	}
-	return (higher);
+	return (highest);
 }
