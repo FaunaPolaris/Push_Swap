@@ -16,6 +16,8 @@ int	stck_rott_rgt(t_stack *stack, int print)
 {
 	if (!stack->front || !stack->back)
 		return (0);
+	if (stack->front == stack->back)
+		return (0);
 	if (stack->front->next == stack->back)
 	{
 		stck_swap(stack, 1);

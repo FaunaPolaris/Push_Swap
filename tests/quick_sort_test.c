@@ -30,9 +30,10 @@ int	main(int argc, char **argv)
 	int	highest = dll_highest(stack_a->front);
 	for (i = 0; highest > 0; highest /= 10)
 		i++;
-	fp_printf("i: %i, base: %i\n", i, (int)pow(10, (i - 1)));
+//	stck_disp(stack_a);
+	sort_by_base(stack_a, stack_b, 10);
 	sort_by_base(stack_a, stack_b, 10);
 	stck_push_all(stack_b, stack_a);
-	stck_disp(stack_a);
+//	stck_disp(stack_a);
 	return (0);
 }
