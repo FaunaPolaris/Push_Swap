@@ -41,7 +41,7 @@ void	sort_by_base(t_stack *stack_a, t_stack *stack_b, int base)
 	if (base < 0 && dll_has_higher(stack_a->front, base))
 		sort_by_base(stack_a, stack_b, base / 10);
 	else if (base >= 0 && dll_has_higher(stack_a->front, base))
-		sort_by_base(stack_a, stack_b, base * 10);
+		sort_by_base(stack_a, stack_b, base += 500);
 }
 
 static void	st_check_order(t_stack *stack_a, t_stack *stack_b, int rot)
@@ -55,15 +55,15 @@ static void	st_check_order(t_stack *stack_a, t_stack *stack_b, int rot)
 					stack_a->front->as_int)) - 1;
 	else
 		return ;
-	if (position == 1 || position == 2 || position == -1)
+	if (position == 1 || position == -1)
 		return ;
-	if (rot)
+	if (rot && position >= 0)
 	{
 		walk_back = position;
 		while (position--)
 			stck_rott_lft(stack_b, 1);
 	}
-	else if (walk_back != -1)
+	else if (walk_back > 0)
 	{
 		while (walk_back--)
 			stck_rott_rgt(stack_b, 1);
@@ -85,11 +85,6 @@ static void	st_compare_for_swap(t_stack *stack_a, t_stack *stack_b)
 	{
 		if (stack_b->front->as_int < stack_b->front->next->as_int)
 			stck_swap(stack_b, 1);
-	}
-	if (stack_a->front && stack_a->front->next)
-	{
-		if (stack_a->front->as_int > stack_a->front->next->as_int)
-			stck_swap(stack_a, 1);
 	}
 }
 

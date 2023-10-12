@@ -31,9 +31,8 @@ int	main(int argc, char **argv)
 	for (i = 0; highest > 0; highest /= 10)
 		i++;
 //	stck_disp(stack_a);
-	sort_by_base(stack_a, stack_b, 10);
-	sort_by_base(stack_a, stack_b, 10);
+	sort_by_base(stack_a, stack_b, 0);
 	stck_push_all(stack_b, stack_a);
-//	stck_disp(stack_a);
+	stck_disp(stack_a);
 	return (0);
 }
