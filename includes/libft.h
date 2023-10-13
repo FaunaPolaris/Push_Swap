@@ -84,7 +84,9 @@ size_t	fp_strlen(const char *s);
 size_t	fp_strlcat(char *dst, const char *src, size_t size);
 size_t	fp_strlcpy(char *dest, const char *src, size_t size);
 int		fp_strncmp(const char *s1, const char *s2, size_t n);
+int		fp_strcmp(char *str1, char *str2);
 int		fp_chrcnt(const char *str, int c);
+int		fp_strisnb(char *str);
 void		fp_strsub(char *line, int old, int sub);
 
 /* memory manipulation */

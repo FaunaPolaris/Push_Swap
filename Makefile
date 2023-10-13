@@ -1,3 +1,4 @@
+NAME		=	push_swap
 CC		=	gcc
 C_FLAGS		=	-Wall -Wextra -Werror -g3 -ggdb
 LIBLINK		=	-L ./sources/libft/ -lft -lm
@@ -5,7 +6,7 @@ INCLUDES	=	-I ./includes $(LIBLINK)
 
 SRCS_DLLIST	=	add_back.c add_frnt.c clear.c fnd_end.c new_list.c new_node.c new_rlist.c putlist.c size.c
 SRCS_DLLIST	+=	has.c has_higher.c has_lower.c highest.c lowest.c mediam.c next_lower.c next_higher.c index.c
-SRCS_DLLIST	+=	next_lower_front.c
+SRCS_DLLIST	+=	next_lower_front.c is_crescent.c has_duplicates.c
 SRCS_STACK	=	new.c swap.c push.c rott_lft.c rott_rgt.c disp.c push_all.c push_higher.c push_lower.c
 SRCS_STACK	+=	swap_double.c rott_rgt_double.c rott_lft_double.c
 SRCS_SORT	=	quick.c  from_lower.c by_base.c
@@ -20,6 +21,7 @@ COMPILED_FILES	:=	0
 OBJS_DIR	=	objs
 OBJS_ALL	=	$(addprefix $(OBJS_DIR)/,$(SRCS_ALL:.c=.o))
 
+MAIN		=	sources/main.c
 TMAIN_STACK	=	tests/stck_test.c
 TMAIN_LLIST	=	tests/dllist_test.c
 TMAIN_ROTATE	=	tests/rotate_test.c
@@ -30,7 +32,7 @@ ANSI		=	\033[0
 RED		=	;31
 GREEN		=	;32
 
-all: libft $(OBJS_ALL) tests
+all: libft $(OBJS_ALL) $(NAME) tests
 	@printf "%-20s$(ANSI)$(GREEN)m%-15s$(ANSI)m\n" "all" "compiled"
 
 libft:
@@ -42,6 +44,10 @@ $(OBJS_DIR)/%.o:%.c
 	@$(eval COMPILED_FILES := $(shell echo $$(($(COMPILED_FILES)+1))))
 	@echo -n "Compiled $(COMPILED_FILES) out of $(TOTAL_FILES)"
 	@echo " ($(ANSI)$(GREEN)m$(shell echo 'scale=2; $(COMPILED_FILES) / $(TOTAL_FILES) * 100' | bc)%$(ANSI)m)"
+
+$(NAME):
+	@$(CC) $(C_FLAGS) $(OBJS_ALL) $(MAIN) $(INCLUDES) -o $@
+	@printf "%-20s$(ANSI)$(GREEN)m%-15s$(ANSI)m\n" "push_swap" "compiled"
 
 tests: $(OBJS_ALL) dllist_test stack_test push_test rotate_test quick_sort
 
@@ -90,6 +96,7 @@ clean:
 
 fclean: tests_fclean clean
 	@make -C sources/libft fclean
+	@rm $(NAME)
 	@printf "%-20s$(ANSI)$(RED)m%-15s$(ANSI)m\n" "Executables" "removed"
 
 tests_re: tests_fclean tests
