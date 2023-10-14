@@ -26,7 +26,10 @@ int	dll_next_lower(t_dllist *head, int than)
 	{
 		j++;
 		if (temp->as_int < than && j < i)
+		{
 			output = temp->as_int;
+			break ;
+		}
 		temp = temp->prev;
 	}
 	return (output);

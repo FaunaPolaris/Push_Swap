@@ -51,6 +51,7 @@ int		dll_is_crescent(t_dllist *head);
 
 int		dll_size(t_dllist *head);
 int		dll_index(t_dllist *head, int of);
+int		dll_rindex(t_dllist *head, int of);
 int		dll_poistion(t_dllist *head, int of);
 
 t_dllist	*dll_fnd_back(t_dllist *head);

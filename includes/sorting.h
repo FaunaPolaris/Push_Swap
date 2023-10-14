@@ -19,6 +19,8 @@ typedef struct s_moves
 {
 	int	rrb;
 	int	rb;
+	int	rra;
+	int	ra;
 }	t_moves;
 
 void	sort_quick(t_stack *stack_a, t_stack *stack_b);

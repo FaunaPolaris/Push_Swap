@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 //	stck_disp(stack_a);
 	sort_v2(stack_a, stack_b, 0);
 	stck_push_all(stack_b, stack_a);
-//	stck_disp(stack_a);
+	stck_disp(stack_a);
 	stck_rmv(stack_a);
 	stck_rmv(stack_b);
 	return (0);

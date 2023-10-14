@@ -39,7 +39,7 @@ void	sort_by_base(t_stack *stack_a, t_stack *stack_b, int base)
 	if (base < 0 && dll_has_higher(stack_a->front, base))
 		sort_by_base(stack_a, stack_b, base / 10);
 	else if (base >= 0 && dll_has_higher(stack_a->front, base))
-		sort_by_base(stack_a, stack_b, base += 500);
+		sort_by_base(stack_a, stack_b, base += 30);
 }
 
 static void	st_check_order(t_stack *stack_a, t_stack *stack_b, int rot)
