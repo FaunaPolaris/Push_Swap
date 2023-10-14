@@ -144,6 +144,7 @@ int	fp_ilerp(int x, int y, double t);
 float	fp_flerp(int x, int y, float t);
 double	fp_lerpcolor(int cx, int cy, double t);
 int	fp_pow(int operand, int power);
+int	fp_difference(int nbr1, int nbr2);
 
 /* misc */
 int	fp_plen(const void *ptr);

@@ -19,6 +19,8 @@ typedef struct s_moves
 {
 	int	rrb;
 	int	rb;
+	int	rrb_r;
+	int	rb_r;
 	int	rra;
 	int	ra;
 }	t_moves;

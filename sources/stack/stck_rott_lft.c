@@ -18,11 +18,6 @@ int	stck_rott_lft(t_stack *stack, int print)
 		return (0);
 	if (stack->front == stack->back)
 		return (0);
-	if (stack->front->next == stack->back)
-	{
-		stck_swap(stack, 1);
-		return (1);
-	}
 	else
 	{
 		stack->front->prev = stack->back;

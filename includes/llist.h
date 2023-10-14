@@ -42,6 +42,7 @@ int		dll_has_duplicates(t_dllist *head);
 int		dll_next_lower(t_dllist *head, int than);
 int		dll_next_lower_front(t_dllist *head, int than);
 int		dll_next_higher(t_dllist *head, int than);
+int		dll_closest_front(t_dllist *head, int to);
 
 int		dll_highest(t_dllist *head);
 int		dll_lowest(t_dllist *head);
