@@ -22,10 +22,8 @@ void	dll_clear(t_dllist **head)
 	{
 		old = head[0];
 		head[0] = head[0]->next;
-		free(old->as_str);
 		free(old);
 	}
-	free(head[0]->as_str);
 	free(head[0]);
 	head[0] = NULL;
 }

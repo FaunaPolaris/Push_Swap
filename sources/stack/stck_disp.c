@@ -27,7 +27,7 @@ void	stck_disp(t_stack *stack)
 	}
 	if (stack->front && stack->back)
 		fp_printf("\033[1;32m%i | %i \033[0m\n",
-				fp_atoi(stack->front->as_str),
-				fp_atoi(stack->back->as_str));
+				stack->front->as_int,
+				stack->back->as_int);
 	write (1, "\n", 1);
 }

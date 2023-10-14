@@ -19,20 +19,18 @@ typedef struct s_dllist
 {
 	struct s_dllist	*next;
 	struct s_dllist	*prev;
-	void		*as_void;
 	int		as_int;
-	char		*as_str;
 }	t_dllist;
 
 // doubly linked list creation and deletion
 
-t_dllist	*dll_new_node(void *value, int padding);
+t_dllist	*dll_new_node(void *value);
 t_dllist	*dll_new_list(void **values);
 t_dllist	*dll_new_rlist(void **values);
 void		dll_clear(t_dllist **head);
 
-int		dll_add_back(t_dllist *head, void *value, int padding);
-int		dll_add_frnt(t_dllist **head, void *value, int padding);
+int		dll_add_back(t_dllist *head, void *value);
+int		dll_add_frnt(t_dllist **head, void *value);
 
 // doubly linked list utilities
 
@@ -59,6 +57,6 @@ t_dllist	*dll_fnd_back(t_dllist *head);
 
 // list visualization
 
-void		dll_putlist(t_dllist *head, char content_type, int fd);
+void		dll_putlist(t_dllist *head, int fd);
 
 #endif

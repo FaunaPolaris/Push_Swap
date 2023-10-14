@@ -14,17 +14,13 @@
 
 int	stck_swap(t_stack *stack, int print)
 {
-	void	*temp;
+	int	temp;
 
 	if (!stack || !stack->front || !stack->front->next)
 		return (0);
-	temp = stack->front->next->as_void;
-	stack->front->next->as_void = stack->front->as_void;
-	stack->front->as_void = temp;
+	temp = stack->front->next->as_int;
 	stack->front->next->as_int = stack->front->as_int;
-	stack->front->as_int = fp_atoi((char *)temp);
-	stack->front->next->as_str = stack->front->as_str;
-	stack->front->as_str = (char *)temp;
+	stack->front->as_int = temp;
 	if (print)
 		fp_printf("s%c\n", stack->id);
 	return (1);

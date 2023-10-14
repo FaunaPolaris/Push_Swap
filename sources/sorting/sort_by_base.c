@@ -35,8 +35,6 @@ void	sort_by_base(t_stack *stack_a, t_stack *stack_b, int base)
 					stack_b->front->as_int))
 			stck_rott_lft(stack_b, 1);
 		st_compare_for_swap(stack_a, stack_b);
-//		stck_disp(stack_a);
-//		stck_disp(stack_b);
 	}
 	if (base < 0 && dll_has_higher(stack_a->front, base))
 		sort_by_base(stack_a, stack_b, base / 10);

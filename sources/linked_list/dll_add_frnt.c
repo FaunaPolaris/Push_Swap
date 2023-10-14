@@ -12,9 +12,9 @@
 
 #include "llist.h"
 
-int	dll_add_frnt(t_dllist **head, void *value, int padding)
+int	dll_add_frnt(t_dllist **head, void *value)
 {
-	head[0]->prev = dll_new_node(value, padding);
+	head[0]->prev = dll_new_node(value);
 	if (!head[0]->prev)
 		return (0);
 	head[0]->prev->next = head[0];

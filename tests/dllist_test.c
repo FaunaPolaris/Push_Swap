@@ -43,14 +43,14 @@ int	main(int argc, char **argv)
 	arg_size = fp_grdlen((char **)values);
 	normal_list = dll_new_list(values);
 	reverse_list = dll_new_rlist(values);
-	dll_putlist(normal_list, argv[2][0], 1);
+	dll_putlist(normal_list, argv[2][0]);
 	fp_printf("highest value: %i\n", dll_highest(normal_list));
 	fp_printf("lowest value: %i\n", dll_lowest(normal_list));
 	fp_printf("median value: %i\n", dll_mediam(normal_list));
 
 	write(1, "\n", 1);
 
-	dll_putlist(reverse_list, argv[2][0], 1);
+	dll_putlist(reverse_list, argv[2][0]);
 	fp_printf("highest value: %i\n", dll_highest(reverse_list));
 	fp_printf("lowest value: %i\n", dll_lowest(reverse_list) );
 	fp_printf("median value: %i\n", dll_mediam(reverse_list));

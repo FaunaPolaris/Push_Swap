@@ -11,24 +11,24 @@ MU_TEST(swap_test)
 	int	first;
 	int	second;
 
-	first = *(int *)stack_a->front->as_void;
-	second = *(int *)stack_a->front->next->as_void;
+	first = stack_a->front->as_int;
+	second = stack_a->front->next->as_int;
 
 	stck_disp(stack_a);
 	stck_swap(stack_a, 1);
-	mu_check(*(int *)stack_a->front->as_void == second);
-	mu_check(*(int *)stack_a->front->next->as_void == first);
+	mu_check(stack_a->front->as_int == second);
+	mu_check(stack_a->front->next->as_int == first);
 	stck_disp(stack_a);
 
 
 
-	first = *(int *)stack_b->front->as_void;
-	second = *(int *)stack_b->front->next->as_void;
+	first = stack_b->front->as_int;
+	second = stack_b->front->next->as_int;
 
 	stck_disp(stack_b);
 	stck_swap(stack_b, 1);
-	mu_check(*(int *)stack_b->front->as_void == second);
-	mu_check(*(int *)stack_b->front->next->as_void == first);
+	mu_check(stack_b->front->as_int == second);
+	mu_check(stack_b->front->next->as_int == first);
 	stck_disp(stack_b);
 	stck_swap(stack_a, 1);
 	stck_swap(stack_b, 1);

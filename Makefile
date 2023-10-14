@@ -9,7 +9,7 @@ SRCS_DLLIST	+=	has.c has_higher.c has_lower.c highest.c lowest.c mediam.c next_l
 SRCS_DLLIST	+=	next_lower_front.c is_crescent.c has_duplicates.c
 SRCS_STACK	=	new.c swap.c push.c rott_lft.c rott_rgt.c disp.c push_all.c push_higher.c push_lower.c
 SRCS_STACK	+=	swap_double.c rott_rgt_double.c rott_lft_double.c
-SRCS_SORT	=	quick.c  from_lower.c by_base.c
+SRCS_SORT	=	quick.c  from_lower.c by_base.c v2.c
 
 SRCS_ALL	=	$(addprefix sources/linked_list/dll_,$(SRCS_DLLIST))
 SRCS_ALL	+=	$(addprefix sources/stack/stck_,$(SRCS_STACK))
