@@ -43,6 +43,8 @@ int	stck_rott_lft_double(t_stack *stack_a, t_stack *stack_b);
 // entire stack movements
 
 int	stck_push_all(t_stack *from, t_stack *to);
+int	stck_lowest_to_front(t_stack *stack);
+int	stck_highest_to_front(t_stack *stack);
 
 // limit stack movements
 

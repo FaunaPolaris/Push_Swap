@@ -28,7 +28,12 @@ int	main(int argc, char **argv)
 	if (!stack_b)
 		return (st_error(stack_a));
 //	stck_disp(stack_a);
-	sort_v2(stack_a, stack_b, 0);
+	sort_v2(stack_a, stack_b, 0, 10);
+	stck_disp(stack_a);
+	stck_disp(stack_b);
+	stck_lowest_to_front(stack_b);
+	stck_disp(stack_a);
+	stck_disp(stack_b);
 	stck_push_all(stack_b, stack_a);
 	stck_disp(stack_a);
 	stck_rmv(stack_a);

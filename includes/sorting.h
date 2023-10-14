@@ -28,6 +28,6 @@ typedef struct s_moves
 void	sort_quick(t_stack *stack_a, t_stack *stack_b);
 void	sort_from_lower(t_stack *stack_a, t_stack *stack_b);
 void	sort_by_base(t_stack *stack_a, t_stack *stack_b, int base);
-void	sort_v2(t_stack *stack_a, t_stack *stack_b, int step);
+void	sort_v2(t_stack *stack_a, t_stack *stack_b, int step, int increment);
 
 #endif
