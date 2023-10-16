@@ -1,6 +1,6 @@
 #include "stack.h"
 
-int	stck_highest_to_front(t_stack *stack)
+int	stck_lowest_to_front(t_stack *stack)
 {
 	int	lowest;
 	int	i;

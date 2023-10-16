@@ -19,8 +19,6 @@ typedef struct s_moves
 {
 	int	rrb;
 	int	rb;
-	int	rrb_r;
-	int	rb_r;
 	int	rra;
 	int	ra;
 }	t_moves;
@@ -29,5 +27,6 @@ void	sort_quick(t_stack *stack_a, t_stack *stack_b);
 void	sort_from_lower(t_stack *stack_a, t_stack *stack_b);
 void	sort_by_base(t_stack *stack_a, t_stack *stack_b, int base);
 void	sort_v2(t_stack *stack_a, t_stack *stack_b, int step, int increment);
+void	sortv2_rotate(t_stack *a, t_stack *b, t_moves *moves, int step);
 
 #endif

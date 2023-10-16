@@ -1,34 +1,33 @@
 #include "sorting.h"
 
-static void	st_compare_for_swap(t_stack *a, t_stack *b);
-static void	st_find_rotate(t_stack *a, t_stack *b, t_moves *moves, int step);
+//static void	st_compare_for_swap(t_stack *a, t_stack *b);
+//static void	st_find_rotate(t_stack *a, t_stack *b, t_moves *moves, int step);
 static void	st_apply_moves(t_stack *a, t_stack *b, t_moves *moves);
 static void	st_compare_rotation(int *first, int *secnd,
 		t_stack *a, t_stack *b, int direction);
 
-void	sort_v2(t_stack *stack_a, t_stack *stack_b, int step, int increment)
+void	sort_v2(t_stack *a, t_stack *b, int step, int increment)
 {
 	t_moves	moves;
 
-	while (dll_has_lower(stack_a->front, step))
+	while (dll_has_lower(a->front, step))
 	{
-		stck_disp(stack_a);
-		stck_disp(stack_b);
+		stck_disp(a);
+		stck_disp(b);
+		fp_printf("step: %i\n", step);
 		moves.rrb = 0;
 		moves.rb = 0;
 		moves.rra = 0;
 		moves.ra = 0;
-		moves.rrb_r = 0;
-		moves.rb_r = 0;
-		st_find_rotate(stack_a, stack_b, &moves, step);
-		st_apply_moves(stack_a, stack_b, &moves);
-		st_compare_for_swap(stack_a, stack_b);
+		sortv2_rotate(a, b, &moves, step);
+		st_apply_moves(a, b, &moves);
+//		st_compare_for_swap(a, b);
 		fp_printf("------------------------\n");
 	}
-	if (dll_has_higher(stack_a->front, step))
-		sort_v2(stack_a, stack_b, step + increment, increment);
+	if (dll_has_higher(a->front, step))
+		sort_v2(a, b, step + increment, increment);
 }
-
+/*
 static void	st_find_rotate(t_stack *a, t_stack *b, t_moves *moves, int step)
 {
 	int	target_a;
@@ -56,23 +55,19 @@ static void	st_find_rotate(t_stack *a, t_stack *b, t_moves *moves, int step)
 	}
 	write(1, "\n", 1);
 }
-
+*/
 static void	st_apply_moves(t_stack *a, t_stack *b, t_moves *moves)
 {
-	fp_printf("rra: %i | rrb %i | ra %i | rb %i\n", moves->rra, moves->rrb,
-			moves->ra, moves->rb);
+//	fp_printf("rra: %i | rrb %i | ra %i | rb %i\n", moves->rra, moves->rrb,
+//			moves->ra, moves->rb);
 	st_compare_rotation(&moves->ra, &moves->rb, a, b, 1);
 	st_compare_rotation(&moves->rra, &moves->rrb, a, b, 0);
 	while (--moves->rrb >= 0)
-	{
 		stck_rott_rgt(b, 1);
-	}
-	while (moves->rb > 0)
-	{
+	while (--moves->rb >= 0)
 		stck_rott_lft(b, 1);
-		moves->rb--;
-	}
-	if (moves->rra <= 0 && moves->rrb <= 0 && moves->ra <= 0 && moves->rb <= 0)
+	if (moves->rra <= 0 && moves->rrb <= 0 &&
+			moves->ra <= 0 && moves->rb <= 0)
 		stck_push(a, b);
 }
 
@@ -94,7 +89,7 @@ static void	st_compare_rotation(int *first, int *secnd,
 			stck_rott_rgt(a, 1);
 	}
 }
-
+/*
 static void	st_compare_for_swap(t_stack *a, t_stack *b)
 {
 	if (b->front && !dll_has_lower(b->front, b->front->as_int))
@@ -113,3 +108,4 @@ static void	st_compare_for_swap(t_stack *a, t_stack *b)
 			stck_swap(b, 1);
 	}
 }
+*/

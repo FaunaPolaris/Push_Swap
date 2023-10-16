@@ -42,7 +42,11 @@ int		dll_has_duplicates(t_dllist *head);
 int		dll_next_lower(t_dllist *head, int than);
 int		dll_next_lower_front(t_dllist *head, int than);
 int		dll_next_higher(t_dllist *head, int than);
+int		dll_closest(t_dllist *head, int to);
+int		dll_closest_higher(t_dllist *head, int to);
+int		dll_closest_lower(t_dllist *head, int to);
 int		dll_closest_front(t_dllist *head, int to);
+int		dll_closest_back(t_dllist *head, int to);
 
 int		dll_highest(t_dllist *head);
 int		dll_lowest(t_dllist *head);
@@ -51,9 +55,14 @@ int		dll_mediam(t_dllist *head);
 int		dll_is_crescent(t_dllist *head);
 
 int		dll_size(t_dllist *head);
+
 int		dll_index(t_dllist *head, int of);
+int		dll_lindex2(t_dllist *head, int nb1, int nb2);
+int		dll_lindex3(t_dllist *head, int nb1, int nb2, int nb3);
 int		dll_rindex(t_dllist *head, int of);
-int		dll_poistion(t_dllist *head, int of);
+int		dll_rlindex3(t_dllist *head, int nb1, int nb2, int nb3);
+
+int		dll_position(t_dllist *head, int of);
 
 t_dllist	*dll_fnd_back(t_dllist *head);
 
