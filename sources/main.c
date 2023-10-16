@@ -27,12 +27,10 @@ int	main(int argc, char **argv)
 	stack_b = stck_new(NULL, 'b');
 	if (!stack_b)
 		return (st_error(stack_a));
-//	stck_disp(stack_a);
-	sort_v2(stack_a, stack_b, 0, 50);
+	sort_v2(stack_a, stack_b, 0, 25);
 	stck_highest_to_front(stack_b);
 	stck_push_all(stack_b, stack_a);
-	stck_disp(stack_b);
-	stck_disp(stack_a);
+//	stck_disp(stack_a);
 	stck_rmv(stack_a);
 	stck_rmv(stack_b);
 	return (0);

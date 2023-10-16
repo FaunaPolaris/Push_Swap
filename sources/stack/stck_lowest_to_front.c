@@ -16,6 +16,5 @@ int	stck_highest_to_front(t_stack *stack)
 			stck_rott_rgt(stack, 1);
 		i++;
 	}
-	stck_disp(stack);
 	return (i);
 }

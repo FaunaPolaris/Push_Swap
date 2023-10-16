@@ -12,9 +12,8 @@ void	sort_v2(t_stack *a, t_stack *b, int step, int increment)
 
 	while (dll_has_lower(a->front, step))
 	{
-		stck_disp(a);
-		stck_disp(b);
-		fp_printf("step: %i\n", step);
+//		stck_disp(a);
+//		stck_disp(b);
 		moves.rrb = 0;
 		moves.rb = 0;
 		moves.rra = 0;
@@ -22,7 +21,7 @@ void	sort_v2(t_stack *a, t_stack *b, int step, int increment)
 		sortv2_rotate(a, b, &moves, step);
 		st_apply_moves(a, b, &moves);
 //		st_compare_for_swap(a, b);
-		fp_printf("------------------------\n");
+//		fp_printf("------------------------\n");
 	}
 	if (dll_has_higher(a->front, step))
 		sort_v2(a, b, step + increment, increment);
