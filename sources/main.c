@@ -27,13 +27,34 @@ int	main(int argc, char **argv)
 	stack_b = stck_new(NULL, 'b');
 	if (!stack_b)
 		return (st_error(stack_a));
-	sort_v2(stack_a, stack_b, 0, 25);
-	stck_highest_to_front(stack_b);
-	stck_push_all(stack_b, stack_a);
+	st_find_best_sort(stack_a, stack_b);
 //	stck_disp(stack_a);
 	stck_rmv(stack_a);
 	stck_rmv(stack_b);
 	return (0);
+}
+
+static void	st_find_best_sort(t_stack *stack_a, t_stack *stack_b)
+{
+	int	stack_size;
+	int	best_step;
+
+	stack_size = dll_size(stack_a->front);
+	if (stack_size == 2)
+		sort_2(stack_a);
+	else if (stack_size == 3)
+		sort_3(stack_a);
+	else if (stack_size == 4)
+		sort_4(stack_a, stack_b);
+	else if (stack_size == 5)
+		sort_5(stack_a, stack_b);
+	else
+	{
+		sort_v2(stack_a, stack_b, dll_lowest(stack_a->front)
+				+ best_step, best_step);
+		stck_highest_to_front(stack_b);
+		stck_push_all(stack_b, stack_a);
+	}
 }
 
 static int	st_validate(t_stack **stack_a, char **args)
