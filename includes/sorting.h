@@ -27,8 +27,10 @@ void	sort_quick(t_stack *stack_a, t_stack *stack_b);
 void	sort_from_lower(t_stack *stack_a, t_stack *stack_b);
 void	sort_by_base(t_stack *stack_a, t_stack *stack_b, int base);
 
-void	sort_v2(t_stack *stack_a, t_stack *stack_b, int step, int increment);
-void	sortv2_rotate(t_stack *a, t_stack *b, t_moves *moves, int step);
+void	sort_v2(t_stack *stack_a, t_stack *stack_b, int step, int increment,
+		int dindexer);
+void	sortv2_rotate(t_stack *a, t_stack *b, t_moves *moves, int step,
+		int dindexer);
 
 void	sort_2(t_stack *stack);
 void	sort_3(t_stack *stack);

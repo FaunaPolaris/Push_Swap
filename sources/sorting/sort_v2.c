@@ -4,7 +4,7 @@ static void	st_apply_moves(t_stack *a, t_stack *b, t_moves *moves);
 static void	st_compare_rotation(int *first, int *secnd,
 		t_stack *a, t_stack *b, int direction);
 
-void	sort_v2(t_stack *a, t_stack *b, int step, int increment)
+void	sort_v2(t_stack *a, t_stack *b, int step, int increment, int dindexer)
 {
 	t_moves	moves;
 
@@ -14,11 +14,11 @@ void	sort_v2(t_stack *a, t_stack *b, int step, int increment)
 		moves.rb = 0;
 		moves.rra = 0;
 		moves.ra = 0;
-		sortv2_rotate(a, b, &moves, step);
+		sortv2_rotate(a, b, &moves, step, dindexer);
 		st_apply_moves(a, b, &moves);
 	}
 	if (dll_has_higher(a->front, step))
-		sort_v2(a, b, step + increment, increment);
+		sort_v2(a, b, step + increment, increment, dindexer + increment);
 }
 
 static void	st_apply_moves(t_stack *a, t_stack *b, t_moves *moves)

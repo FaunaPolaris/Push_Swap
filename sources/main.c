@@ -44,11 +44,11 @@ static void	st_find_dindex(t_dllist *head)
 
 	i = -1;
 	size = dll_size(head);
-	current = dll_highest(head);
+	current = dll_lowest(head);
 	while (++i < size)
 	{
 		dll_pointer(head, current)->dindex = i;
-		current  = dll_closest_lower(head, current);
+		current  = dll_closest_higher(head, current);
 	}
 }
 
@@ -67,13 +67,12 @@ static void	st_find_best_sort(t_stack *stack_a, t_stack *stack_b)
 		sort_5(stack_a, stack_b);
 	else
 	{
-		stck_push(stack_a, stack_b);
 		if (stack_size >= 500)
-			sort_v2(stack_a, stack_b, dll_lowest(stack_a->front)
-					+ 50, 50);
+			sort_v2(stack_a, stack_b,
+					dll_lowest(stack_a->front), 50, 0);
 		else
-			sort_v2(stack_a, stack_b, dll_lowest(stack_a->front)
-					+ 10, 10);
+			sort_v2(stack_a, stack_b,
+					dll_lowest(stack_a->front), 20, 0);
 		stck_highest_to_front(stack_b);
 		stck_push_all(stack_b, stack_a);
 	}

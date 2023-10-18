@@ -31,7 +31,7 @@ int	main(int argc, char **argv)
 	for (i = 0; highest > 0; highest /= 10)
 		i++;
 //	stck_disp(stack_a);
-	sort_v2(stack_a, stack_b, 0, 5);
+	sort_v2(stack_a, stack_b, 0, 5, 0);
 	stck_lowest_to_front(stack_b);
 	stck_push_all(stack_b, stack_a);
 //	stck_disp(stack_a);

@@ -60,9 +60,13 @@ int		dll_size(t_dllist *head);
 int		dll_index(t_dllist *head, int of);
 int		dll_lindex2(t_dllist *head, int nb1, int nb2);
 int		dll_lindex3(t_dllist *head, int nb1, int nb2, int nb3);
+int		dll_lindex4(t_dllist *head, int nb1, int nb2, int nb3, int nb4);
 
 int		dll_rindex(t_dllist *head, int of);
+int		dll_rlindex2(t_dllist *head, int nb1, int nb2);
 int		dll_rlindex3(t_dllist *head, int nb1, int nb2, int nb3);
+int		dll_rlindex4(t_dllist *head, int nb1, int nb2,
+		int nb3, int nb4);
 
 int		dll_dindex(t_dllist *head, int of);
 int		dll_dindex_has_lower(t_dllist *head, int than);
