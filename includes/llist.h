@@ -63,6 +63,7 @@ int		dll_rindex(t_dllist *head, int of);
 int		dll_rlindex3(t_dllist *head, int nb1, int nb2, int nb3);
 
 int		dll_position(t_dllist *head, int of);
+t_dllist	*dll_pointer(t_dllist *head, int of);
 
 t_dllist	*dll_fnd_back(t_dllist *head);
 

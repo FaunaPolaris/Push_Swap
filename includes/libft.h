@@ -46,6 +46,7 @@ int		fp_atoi(const char *nptr);
 char	*fp_itoa(int n);
 char	*fp_itoa_base(unsigned int nb, int base);
 unsigned int	fp_atox(char *s);
+long long int	fp_atoll(const char *nptr);
 
 /* print */
 int		fp_putchar_fd(char c, int fd);
@@ -108,6 +109,7 @@ int		fp_isdigit(int c);
 int		fp_isprint(int c);
 int		fp_isupper(int c);
 int		fp_isprime(int nb);
+int		fp_ispace(int c);
 int		fp_ishighest(int quantity, ...);
 int		fp_islowest(int quantity, ...);
 int		fp_compare(int c, int quantity, ...);

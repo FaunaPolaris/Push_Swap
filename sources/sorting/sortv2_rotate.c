@@ -10,16 +10,13 @@ void	sortv2_rotate(t_stack *a, t_stack *b, t_moves *moves, int step)
 	int	target_b;
 
 	target_a = st_find_best_targeta(a->front, b, step);
-//	fp_printf("target_a: %i |", target_a);
 	if(b->front && a->front)
 	{
 		target_b = dll_closest_lower(b->front, target_a);
-//		fp_printf(" target_b: %i\n", target_b);
 		st_find_rotation(b->front, target_b, &moves->rb, &moves->rrb);
 	}
 	if (a->front)
 		st_find_rotation(a->front, target_a, &moves->ra, &moves->rra);
-//	write(1, "\n", 1);
 }
 
 static void	st_find_rotation(t_dllist *head, int target,
@@ -54,8 +51,6 @@ static int	st_find_best_targeta(t_dllist *a, t_stack *stack_b, int step)
 			b = b->next;
 		}
 	}
-//	fp_printf("lowest in a: %i | lower in a: %i | closest in a: %i\n",
-//			lowest, lower, closest);
 	if (dll_rindex(a, dll_rlindex3(a, closest, lower, lowest)) <
 			dll_index(a, dll_lindex3(a, closest, lower, lowest)))
 		return (dll_rlindex3(a, closest, lower, lowest));

@@ -1,6 +1,6 @@
 NAME		=	push_swap
 CC		=	gcc
-C_FLAGS		=	-Wall -Wextra -Werror -g3 -ggdb -O3
+C_FLAGS		=	-Wall -Wextra -Werror -g3 -ggdb
 LIBLINK		=	-L ./sources/libft/ -lft -lm
 INCLUDES	=	-I ./includes $(LIBLINK)
 

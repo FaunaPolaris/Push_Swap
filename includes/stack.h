@@ -18,6 +18,7 @@
 typedef struct s_stack
 {
 	char		id;
+	int		dindex;
 	t_dllist	*front;
 	t_dllist	*back;
 }	t_stack;
