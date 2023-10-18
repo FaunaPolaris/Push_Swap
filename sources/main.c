@@ -15,6 +15,7 @@
 static int	st_validate(t_stack **stack_a, char **args);
 static int 	st_error(t_stack *stack_a);
 static void	st_find_best_sort(t_stack *stack_a, t_stack *stack_b);
+static void	st_find_dindex(t_dllist *head);
 
 int	main(int argc, char **argv)
 {
@@ -35,20 +36,19 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-static void st_find_dindex(t_dllist *head)
+static void	st_find_dindex(t_dllist *head)
 {
-	t_dllist	*head;
 	int		size;
 	int		i;
 	int		current;
 
 	i = -1;
 	size = dll_size(head);
-	current = dll_lowest(head);
+	current = dll_highest(head);
 	while (++i < size)
 	{
 		dll_pointer(head, current)->dindex = i;
-		current  = dll_next_higher(head, current);
+		current  = dll_closest_lower(head, current);
 	}
 }
 
@@ -73,7 +73,7 @@ static void	st_find_best_sort(t_stack *stack_a, t_stack *stack_b)
 					+ 50, 50);
 		else
 			sort_v2(stack_a, stack_b, dll_lowest(stack_a->front)
-					+ 20, 20);
+					+ 10, 10);
 		stck_highest_to_front(stack_b);
 		stck_push_all(stack_b, stack_a);
 	}

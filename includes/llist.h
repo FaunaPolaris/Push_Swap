@@ -19,6 +19,7 @@ typedef struct s_dllist
 {
 	struct s_dllist	*next;
 	struct s_dllist	*prev;
+	int		dindex;
 	int		as_int;
 }	t_dllist;
 
@@ -59,8 +60,16 @@ int		dll_size(t_dllist *head);
 int		dll_index(t_dllist *head, int of);
 int		dll_lindex2(t_dllist *head, int nb1, int nb2);
 int		dll_lindex3(t_dllist *head, int nb1, int nb2, int nb3);
+
 int		dll_rindex(t_dllist *head, int of);
 int		dll_rlindex3(t_dllist *head, int nb1, int nb2, int nb3);
+
+int		dll_dindex(t_dllist *head, int of);
+int		dll_dindex_has_lower(t_dllist *head, int than);
+int		dll_dindex_lower(t_dllist *head, int than);
+int		dll_dindex_lower_back(t_dllist *head, int than);
+int		dll_dindex_lower_front(t_dllist *head, int than);
+int		dll_dindex_value(t_dllist *head, int dindex);
 
 int		dll_position(t_dllist *head, int of);
 t_dllist	*dll_pointer(t_dllist *head, int of);

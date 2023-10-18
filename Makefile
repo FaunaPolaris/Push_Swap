@@ -6,8 +6,9 @@ INCLUDES	=	-I ./includes $(LIBLINK)
 
 SRCS_DLLIST	=	add_back.c add_frnt.c clear.c fnd_end.c new_list.c new_node.c new_rlist.c putlist.c size.c
 SRCS_DLLIST	+=	has.c has_higher.c has_lower.c highest.c lowest.c mediam.c next_lower.c next_higher.c index.c
-SRCS_DLLIST	+=	next_lower_front.c is_crescent.c has_duplicates.c rindex.c closest_front.c
+SRCS_DLLIST	+=	next_lower_front.c is_crescent.c has_duplicates.c rindex.c closest_front.c pointer.c
 SRCS_DLLIST	+=	lindex3.c rlindex3.c lindex2.c closest.c closest_back.c closest_higher.c closest_lower.c
+SRCS_DLLIST	+=	dindex.c dindex_lower.c dindex_lower_front.c dindex_lower_back.c dindex_has_lower.c dindex_value.c
 SRCS_STACK	=	new.c swap.c push.c rott_lft.c rott_rgt.c disp.c push_all.c push_higher.c push_lower.c
 SRCS_STACK	+=	swap_double.c rott_rgt_double.c rott_lft_double.c lowest_to_front.c highest_to_front.c
 SRCS_SORT	=	_quick.c  _from_lower.c _by_base.c _v2.c v2_rotate.c _2.c _3.c _4.c _5.c

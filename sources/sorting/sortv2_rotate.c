@@ -36,8 +36,6 @@ static int	st_find_best_targeta(t_dllist *a, t_stack *stack_b, int step)
 	int		lowest;
 
 	closest = dll_next_lower(a, step);
-	lower = 0;
-	lowest = 0;
 	lower = dll_next_lower(a, step);
 	lowest = dll_lowest(a);
 	if (stack_b->front)
